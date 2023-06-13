@@ -1,0 +1,58 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist",
+    "withGlobalTauri": false
+  },
+  "package": {
+    "productName": "souse",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "path": {
+        "all": true
+      },
+      "fs": {
+        "all": false,
+        "readFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "createDir": true,
+        "removeFile": true,
+        "exists": true,
+        "scope": [
+          "$CACHE/souse",
+          "$CACHE/souse/*",
+          "$CACHE/souse/avatars",
+          "$CACHE/souse/avatars/*"
+        ]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.notnite.souse",
+      "icon": ["icons/icon.png", "icons/icon.icns", "icons/icon.ico"]
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "souse",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  }
+}
